@@ -6,9 +6,10 @@ from blog.models import Post
 # Create your views here.
 class PostLV(ListView):
     model = Post
-    template_name = 'blog/post_all.html'
+    template_name = 'blog/post/post_all.html'
     context_object_name = 'posts'
     paginate_by = 3
 
 class PostDV(DetailView):
     model = Post
+    template_name = 'blog/post/post_detail.html'

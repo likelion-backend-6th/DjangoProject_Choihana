@@ -1,7 +1,14 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+from blog.models import Post
 
 
 # Create your views here.
 class PostLV(ListView):
-    pass
+    model = Post
+    template_name = 'blog/post_all.html'
+    context_object_name = 'posts'
+    paginate_by = 3
+
+class PostDV(DetailView):
+    model = Post

@@ -21,8 +21,8 @@ class PostDV(DetailView):
 def post_detail(request, pk):
     post = get_object_or_404(Post, id = pk)
     form = CommentForm()
-
-    return render(request, 'blog/post/post_detail.html', {'post':post, 'form':form})
+    comments = post.comments.filter(active = True)
+    return render(request, 'blog/post/post_detail.html', {'post':post, 'form':form, 'comments':comments})
 
 def post_share(request, pk):
     post = get_object_or_404(Post, id= pk)
@@ -50,4 +50,5 @@ def comment(request,pk):
         comment.post = post
         comment.save()
         return redirect(post)
-    return render(request, 'blog/post/post_detail.html',{'post':post, 'form':form})
+    comments = post.comments.filter(active=True)
+    return render(request, 'blog/post/post_detail.html',{'post':post, 'form':form , 'comments':comments})

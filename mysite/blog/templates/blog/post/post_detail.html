@@ -1,13 +1,16 @@
 {% extends "blog/base.html" %}
-{% block title%} {{object.title}} {% endblock %}
+{% block title%} {{post.title}} {% endblock %}
 {% block content %}
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">{{object.title}}</h2>
-        <p class="card-text">{{object.body}}</p>
-        <a href="{% url 'blog:share' object.id %}" class="card-link">Share</a>
+        <h2 class="card-title">{{post.title}}</h2>
+        <p class="card-text">{{post.body}}</p>
+        <a href="{% url 'blog:share' post.id %}" class="card-link">Share</a>
             <a href="#" class="card-link">Another link</a>
     </div>
+</div>
+<div class="card">
+     {%include 'blog/post/includes/comment_form.html' %}
 </div>
 
 {% endblock %}

@@ -43,4 +43,4 @@ class Comment(models.Model):
     updated = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
     def __str__(self):
-        return self.name
+        return f"comment by {self.name} on {self.post}"

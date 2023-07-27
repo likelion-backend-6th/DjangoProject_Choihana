@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +133,6 @@ EMAIL_HOST_USER = 'hanazzang999@gmail.com'
 EMAIL_HOST_PASSWORD = 'rdjjdfvvnvriacpg'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50

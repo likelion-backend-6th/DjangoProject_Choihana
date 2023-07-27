@@ -5,7 +5,7 @@
     <div class="card-body">
         <h2 class="card-title">{{object.title}}</h2>
         <p class="card-text">{{object.body}}</p>
-        <a href="#" class="card-link">Card link</a>
+        <a href="{% url 'blog:share' object.id %}" class="card-link">Share</a>
             <a href="#" class="card-link">Another link</a>
     </div>
 </div>
